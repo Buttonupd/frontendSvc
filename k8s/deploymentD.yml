@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-spin-deployment
+  labels:
+    app: angular-spin
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: angular-spin
+  template:
+    metadata:
+      labels:
+        app: angular-spin
+    spec:
+      containers:
+      - name: angular-app
+        image: 231564897/angular-app
+        ports:
+        - containerPort: 8081

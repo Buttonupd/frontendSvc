@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: angular-spin
+  labels:
+    name : angular-spin
+spec:
+  containers:
+  - name : angular-spin
+    image: 231564897/angular-app
+    ports:
+    - containerPort: 8081
