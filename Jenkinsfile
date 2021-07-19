@@ -11,8 +11,8 @@ node(){
         
     }
     stage('Build') {
-        nodejs('nodejs') {
-            sh 'npm run build'
+        angular('angular') {
+            sh 'ng serve '
             echo "Build completed"
         }
         
