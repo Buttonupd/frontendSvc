@@ -1,6 +1,13 @@
-FROM nginx:1.13.1-alpine
+FROM node:14
 
-EXPOSE 80
+RUN npm install -g @angular/cli@12.1.1 
 
-COPY dist /var/www
-COPY config/nginx.conf /etc/nginx/nginx.conf
+WORKDIR /frontend
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+CMD ng serve --host 0.0.0.0 --port 8081
+
